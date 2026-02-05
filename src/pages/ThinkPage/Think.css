@@ -1,0 +1,98 @@
+.think {
+  margin: 0 auto;
+  padding: 270px 129px;
+}
+
+.think-header {
+  margin-bottom: 120px;
+}
+
+.think .sub-title {
+  color: #8a8a8a;
+}
+
+.think .title {
+  color: #0d0d0d;
+  line-height: 1.1;
+}
+
+.think-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 40px;
+}
+
+.think-item {
+  background: #fff;
+  border-radius: 20px;
+  padding: 36px 40px;
+  cursor: pointer;
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.think-item:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+}
+
+.think-question {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.think-q-label {
+  font-size: 12px;
+  color: #b0b0b0;
+  min-width: 80px;
+}
+
+.think-question p {
+  flex: 1;
+  font-size: 18px;
+  color: #111;
+  line-height: 1.4;
+}
+
+.think-arrow {
+  font-size: 18px;
+  color: #aaa;
+  transition: transform 0.3s ease;
+}
+
+.think-item.open .think-arrow {
+  transform: rotate(180deg);
+}
+
+.think-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.think-answer p {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #666;
+}
+
+.think-item.open .think-answer {
+  max-height: 200px;
+}
+
+@media (max-width: 1024px) {
+  .think {
+    padding: 160px 40px;
+  }
+
+  .think-list {
+    grid-template-columns: 1fr;
+  }
+
+  .think-item {
+    padding: 28px 24px;
+  }
+}

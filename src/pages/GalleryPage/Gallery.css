@@ -1,0 +1,28 @@
+.gallery {
+  height: 100vh;
+  justify-content: center;
+  background-image: url("/public/img/bg.svg");
+  padding: 80px 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-label {
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.main-display-title {
+  font-size: 156px;
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -4px;
+  margin-bottom: 48px;
+}
+
+.bottom-description {
+  font-size: 20px;
+  line-height: 1.6;
+}

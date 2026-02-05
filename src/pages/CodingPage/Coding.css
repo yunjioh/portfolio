@@ -1,0 +1,161 @@
+.coding {
+  margin: 0 auto;
+  background: #fafafa;
+  padding-bottom: 270px;
+}
+
+.coding-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 200px;
+  padding: 270px 129px;
+}
+
+.coding .sub-title {
+  color: #646464;
+}
+
+.coding .title {
+  color: #0d0d0d;
+}
+
+.coding-desc {
+  text-align: right;
+  font-size: 25px;
+  line-height: 1.6;
+  color: #828282;
+}
+
+.coding-desc span {
+  color: #deaaff;
+  font-weight: 600;
+}
+
+.coding-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 180px;
+}
+
+.coding-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: #ddd;
+}
+
+.coding-item {
+  position: relative;
+  width: 100%;
+}
+
+.coding-item:nth-child(odd) .coding-thumb {
+  padding-right: 52%;
+}
+
+.coding-item:nth-child(odd) .coding-text {
+  text-align: right;
+  transform: translateX(-90%);
+}
+
+.coding-item:nth-child(even) .coding-thumb {
+  padding-left: 61%;
+}
+
+.coding-item:nth-child(even) .coding-text {
+  text-align: left;
+  transform: translateX(-16%);
+}
+
+.coding-text {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  text-align: center;
+  background: #fafafa;
+  white-space: pre-line;
+}
+
+.coding-label {
+  font-size: 12px;
+  color: #aaa;
+  letter-spacing: 0.08em;
+}
+
+.coding-item p {
+  font-size: 40px;
+  margin: 12px 0 32px;
+  font-weight: normal;
+}
+
+.coding-thumb {
+  margin-top: 80px;
+  overflow: hidden;
+}
+
+.coding-thumb img {
+  display: block;
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+  filter: grayscale(100%);
+}
+
+.coding-btn {
+  display: block;
+  margin: 200px auto 0;
+  background: none;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  position: relative;
+}
+
+.coding-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: #000;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+
+.coding-btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (max-width: 1024px) {
+  .coding-header {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .coding-header h2 {
+    font-size: 48px;
+  }
+
+  .coding-item:nth-child(odd),
+  .coding-item:nth-child(even) {
+    padding: 0;
+    text-align: left;
+  }
+
+  .coding-line {
+    display: none;
+  }
+
+  .coding-list {
+    gap: 120px;
+  }
+}

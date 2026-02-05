@@ -1,0 +1,60 @@
+.about {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 229px 129px;
+}
+
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 155px;
+}
+
+.text-content {
+  text-align: start;
+}
+
+.quote-mark {
+  font-size: 4rem;
+  color: #fff;
+  font-family: fantasy;
+  line-height: 0.5;
+}
+
+.intro-phrase {
+  font-size: 45px;
+  font-weight: 400;
+  margin-bottom: 36px;
+}
+
+.highlight {
+  color: #deaaff;
+}
+
+.description {
+  color: #9e9e9e;
+  line-height: 1.6;
+  font-size: 20px;
+}
+
+.image-content {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-wrapper {
+  position: relative;
+  display: flex;
+}
+
+img.comment1 {
+  display: block;
+  margin-bottom: 200px;
+}
+
+img.comment2 {
+  display: block;
+  margin-bottom: 330px;
+}

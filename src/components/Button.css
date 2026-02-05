@@ -1,0 +1,12 @@
+.main-button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 15px 23px;
+  border-radius: 50px;
+  font-family: "Basis Grotesque Arabic Pro", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  cursor: pointer;
+}
