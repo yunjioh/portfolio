@@ -1,6 +1,5 @@
 import Hero from "./pages/HeroPage/Hero";
 import "./App.css";
-import Video from "./pages/VideoPage/Video";
 import About from "./pages/AboutPage/About";
 import Keyword from "./pages/KeywordPage/Keyword";
 import Hobby from "./pages/HobbyPage/Hobby";
@@ -11,17 +10,25 @@ import Coding from "./pages/CodingPage/Coding";
 import Think from "./pages/ThinkPage/Think";
 import Together from "./pages/TogetherPage/Together";
 import Contact from "./pages/ContactPage/Contact";
+import useRevealOnScroll from "./hooks/useRevealOnScroll";
+import Preview from "./pages/PreviewPage/Preview";
 
 function App() {
+  useRevealOnScroll({
+    selector: ".js-reveal",
+    y: 44, // 티 나게
+    start: "top 80%",
+    end: "bottom 20%",
+  });
   return (
     <div className="App">
       <Hero />
-      <Video />
       <About />
       <Keyword />
       <Hobby />
       <Skill />
       <Gallery />
+      <Preview />
       <Project />
       <Coding />
       <Think />

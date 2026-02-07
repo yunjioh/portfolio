@@ -1,75 +1,99 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./Hobby.css";
 import Title from "../../components/Title";
+import SubTitle from "../../components/SubTitle";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const hobbyList = [
+  { id: 1, title: "HEALING", img: "/img/hobby1.svg", label: "Mind" },
+  { id: 2, title: "THEATER", img: "/img/hobby2.svg", label: "Culture" },
+  {
+    id: 3,
+    title: "VISIT\nEXHIBITION",
+    img: "/img/hobby3.svg",
+    label: "Inspiration",
+  },
+  { id: 4, title: "VISIT\nMUSEUM", img: "/img/hobby4.svg", label: "History" },
+  {
+    id: 5,
+    title: "MAKING\nPERFUME",
+    img: "/img/hobby5.svg",
+    label: "Experience",
+  },
+  { id: 6, title: "Daily\nActivity", img: "/img/hobby6.svg", label: "Energy" },
+  { id: 7, title: "World\nTravel", img: "/img/hobby7.svg", label: "Discovery" },
+];
 
 const Hobby = () => {
-  const hobbyList = [
-    { id: 1, title: "HEALING", desc: "휴식", img: "/img/hobby1.svg" },
-    { id: 2, title: "THEATER", desc: "연극 관람", img: "/img/hobby2.svg" },
-    {
-      id: 3,
-      title: "VISIT EXHIBITION",
-      desc: "전시 관람",
-      img: "/img/hobby3.svg",
-    },
-    {
-      id: 4,
-      title: "VISIT MUSEUM",
-      desc: "박물관 방문",
-      img: "/img/hobby4.svg",
-    },
-    {
-      id: 5,
-      title: "MAKING PERFUME",
-      desc: "조향 체험",
-      img: "/img/hobby5.svg",
-    },
-    { id: 6, title: "ACTIVITY", desc: "야구 직관", img: "/img/hobby6.svg" },
-    { id: 7, title: "TRAVEL", desc: "여행", img: "/img/hobby7.svg" },
-  ];
+  const lineRef = useRef(null);
 
-  const marqueeList = [...hobbyList, ...hobbyList, ...hobbyList];
+  useEffect(() => {
+    gsap.fromTo(
+      lineRef.current,
+      { scaleY: 0 },
+      {
+        scaleY: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".hobby-list",
+          start: "top 70%",
+          end: "bottom bottom",
+          scrub: true,
+        },
+      },
+    );
+
+  }, []);
 
   return (
-    <section className="hobby">
-      <Title
-        subTitle="THIS IS ME"
-        mainTitle="HOBBIES: "
-        decoTitle="MUSIC · EXERCISE · INSPIRATION · THEATER · TRAVEL"
-      />
+    <section className="hobby" id="process">
+      <div className="hobby-header">
+        <Title
+          subTitle="THIS IS ME"
+          mainTitle="HOBBIES: "
+          decoTitle="MUSIC · EXERCISE · INSPIRATION · THEATER · TRAVEL"
+        />
 
-      <div className="hobby-slider-container">
-        <motion.div
-          className="hobby-track"
-          animate={{ x: [0, "-33.33%"] }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 40,
-              ease: "linear",
-            },
-          }}
-          style={{ display: "flex", width: "max-content" }}
-        >
-          {marqueeList.map((item, index) => (
-            <motion.div
-              key={`${item.id}-${index}`}
-              className="hobby-item"
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              style={{ flex: "0 0 auto", cursor: "pointer" }}
-            >
-              <div className="hobby-img-wrapper">
-                <img src={item.img} alt={item.title} />
-              </div>
-              <div className="hobby-info">
-                <h4 className="item-title">{item.title}</h4>
-                <p className="item-desc">{item.desc}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        <SubTitle
+          align="right"
+          title={`Possesses solid coding skills\nand is proficient in design tools.`}
+          description={[
+            { text: "탄탄한 ", highlight: false },
+            { text: "코딩 스킬", highlight: true, color: "purple" },
+            { text: "을 겸비하고 있으며, ", highlight: false },
+            { text: "디자인 툴", highlight: true, color: "yellow" },
+            { text: "과 AI 도구를 능숙하게 다룹니다.", highlight: false },
+          ]}
+        />
+      </div>
+      <div className="selected-projects-label">Selected Projects</div>
+
+      <div className="hobby-list">
+        <div
+          className="hobby-line"
+          ref={lineRef}
+          style={{ transformOrigin: "top" }}
+        />
+
+        {hobbyList.map((item) => (
+          <div className="hobby-item" key={item.id}>
+            <div className="hobby-text">
+              <span className="hobby-label">{item.label}</span>
+              <p className="hobby-title">{item.title}</p>
+            </div>
+
+            <div className="hobby-thumb">
+              <img src={item.img} alt={item.title} />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="go-to-site">
+        <a href="#contact">GO TO SITE</a>
       </div>
     </section>
   );

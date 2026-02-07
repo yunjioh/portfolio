@@ -5,20 +5,19 @@
   align-items: center;
   font-family: "Instrument Sans", sans-serif;
   overflow: hidden;
-  height: 135vh;
+  height: 180vh;
   padding-top: 180px;
 }
 
 .section-label {
   font-size: 25px;
   color: #646464;
-  margin-bottom: 140px;
+  margin-bottom: 100px;
 }
 
 .keyword-container {
   position: relative;
   width: 100%;
-  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,49 +29,57 @@
 }
 
 .kw-item {
-  font-size: 96px;
-  font-weight: normal;
-  margin: 50px 0;
+  font-size: 100px;
+  font-weight: 400;
+  margin: 70px 0;
   letter-spacing: -4px;
-  position: relative;
   line-height: 1;
+  color: #b5b5b5;
+  transition: color 0.35s ease, transform 0.35s ease, opacity 0.35s ease;
+  will-change: transform;
+  opacity: 0.65;
 }
 
-.kw-item.light {
-  color: #9e9e9e;
-}
-.kw-item.dark {
+.kw-item.active {
   color: #0b0b0b;
-}
-.kw-item.italic {
-  font-style: italic;
+  transform: scale(1.04);
+  opacity: 1;
+  font-style: italic; 
 }
 
-.badge {
+.img-badge {
   position: absolute;
   font-size: 25px;
-  font-style: normal;
   padding: 7px 28px;
   font-weight: 500;
-  top: -15px;
+  z-index: 3;
+  border-radius: 999px;
+  white-space: nowrap;
 }
 
-.badge.purple {
-  background-color: #deaaff;
-  color: #000;
-  right: 20px;
-  transform: rotate(10deg);
+.photo-1 {
+  top: -14%;
+  left: 8%;
 }
-
-.badge.yellow {
-  background-color: #fccf00;
-  color: #000;
-  left: 100px;
-  transform: rotate(-10deg);
+.photo-2 {
+  top: -9%;
+  right: 9%;
 }
-
-.photo-box {
-  position: absolute;
+.photo-3 {
+  top: 30%;
+  left: 3%;
+}
+.photo-4 {
+  top: 30%;
+  right: 2%;
+}
+.photo-5 {
+  bottom: -2%;
+  left: 9%;
+}
+.photo-6 {
+  bottom: -10%;
+  right: 9%;
 }
 
 .photo-box img {
@@ -80,27 +87,38 @@
   display: block;
 }
 
-.photo-1 {
-  top: -35%;
-  left: 14%;
+.photo-box {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(18px) scale(0.94);
+  transition: transform 0.55s ease, opacity 0.55s ease, filter 0.55s ease;
+  will-change: transform, opacity, filter;
+  z-index: 1;
 }
-.photo-2 {
-  top: -25%;
-  right: 15%;
+
+.keyword.in-view .photo-box {
+  opacity: 0.55;
+  transform: translateY(0) scale(0.98);
 }
-.photo-3 {
-  top: 25%;
-  left: 8%;
+
+.photo-box.is-active {
+  opacity: 1 !important;
+  transform: translateY(-10px) scale(1.06) !important;
+  z-index: 10;
 }
-.photo-4 {
-  top: 35%;
-  right: 5%;
+
+.img-badge {
+  opacity: 0;
+  transform: scale(0.85) rotate(-10deg);
+  transition: transform 0.45s ease, opacity 0.45s ease;
+  will-change: transform, opacity;
 }
-.photo-5 {
-  bottom: -5%;
-  left: 15%;
+
+.keyword.in-view .img-badge {
+  opacity: 1;
+  transform: scale(1) rotate(var(--badge-rotate));
 }
-.photo-6 {
-  bottom: -25%;
-  right: 18%;
+
+.photo-box.is-active .img-badge {
+  transform: scale(1.05) rotate(var(--badge-rotate));
 }

@@ -1,0 +1,32 @@
+.subTitle {
+  margin-bottom: 320px;
+}
+
+.subTitle.right {
+  text-align: right;
+    margin-left: auto;
+}
+
+.sub-phrase {
+  font-size: 55px;
+  letter-spacing: -3px;
+  line-height: 1.1;
+  color: #0c0c0c;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+.sub-desc {
+  font-size: 23px;
+  color: #9e9e9e;
+}
+
+.highlight.purple {
+  color: #deaaff;
+  font-weight: 500;
+}
+
+.highlight.yellow {
+  color: #fccf00;
+  font-weight: 500;
+}

@@ -8,29 +8,48 @@ const ProjectCard = ({ project }) => {
     <section className="project">
       <div className="project-content">
         <div className="text-area">
-          <Title subTitle={project.subTitle} mainTitle={project.mainTitle} />
+          <Title subTitle={project.subTitle} mainTitle={project.mainTitle}
+            animate={false} />
+
           <div className="project-info">
             <p className="duration-text">
-              <strong>DURATION</strong> {project.duration}
+              <strong style={{ color: project.pointColor }}>DURATION</strong>{" "}
+              {project.duration}
             </p>
+
             <p className="role-text">
-              <strong>PROJECT ROLE</strong> {project.role}
+              <strong style={{ color: project.pointColor }}>PROJECT ROLE</strong>{" "}
+              <strong>{project.role}</strong>
             </p>
+
             <p className="detail-text">{project.detail}</p>
           </div>
-          <div className="button-group">
-            <Button text="WEBSITE  →" />
-            <Button text="PROPOSAL  →" />
+
+          <div className="bottom">
+            {Array.isArray(project.contribution) && project.contribution.length > 0 && (
+              <div className="contrib">
+                {project.contribution.map((item, idx) => (
+                  <div className="contrib-row" key={idx}>
+                    <span className="contrib-label" style={{ color: project.pointColor }}>{item.label}</span>
+                    <span className="contrib-value">{item.value}%</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="button-group">
+              <Button text="WEBSITE  →" bgColor={project.pointColor} />
+              <Button text="PROPOSAL  →" bgColor={project.pointColor} />
+            </div>
           </div>
         </div>
 
         <div className="image-display-area">
-          {project.images &&
-            project.images.map((src, idx) => (
-              <div key={idx} className="image-wrapper">
-                <img src={src} alt={`${project.mainTitle} screen ${idx}`} />
-              </div>
-            ))}
+          {project.image && (
+            <div className="image-wrapper">
+              <img src={project.image} alt={`${project.mainTitle} preview`} />
+            </div>
+          )}
         </div>
       </div>
     </section>
