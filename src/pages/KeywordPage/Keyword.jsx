@@ -1,13 +1,12 @@
-import React, { useRef, useEffect, useState, useMemo } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./Keyword.css";
 import Badge from "../../components/Badge";
 
 const Keyword = () => {
-  // 키워드/이미지 매칭 인덱스
   const [activeIndex, setActiveIndex] = useState(0);
 
   const containerRef = useRef(null);
-  const itemsRef = useRef([]); // kw-item refs
+  const itemsRef = useRef([]);
 
   const photos = [
     {
@@ -87,7 +86,10 @@ const Keyword = () => {
     "METICULOUSNESS",
   ];
 
-  // ✅ 섹션이 중앙에 있을 때만 “등장(in-view)” 트리거
+  // ✅ 랜덤 딜레이: 컴포넌트 생애주기 동안 고정
+  const randomDelays = useRef(photos.map(() => Math.random() * 0.7)).current;
+
+  // ✅ 섹션 중앙 진입 감지
   const [isInView, setIsInView] = useState(false);
   useEffect(() => {
     const el = containerRef.current;
@@ -95,23 +97,14 @@ const Keyword = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => setIsInView(entry.isIntersecting),
-      {
-        threshold: 0,
-        // viewport 중앙 1px 라인을 관측영역으로 만들어 "중앙에 왔을 때"만 true
-        rootMargin: "-50% 0px -50% 0px",
-      },
+      { threshold: 0, rootMargin: "-50% 0px -50% 0px" },
     );
 
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
-  const randomDelays = useMemo(
-    () => photos.map(() => Math.random() * 0.7),
-    [photos],
-  );
-
-  // ✅ 중앙에 가장 가까운 kw-item을 active로 (전문/부드럽게: rAF)
+  // ✅ 중앙 kw-item 계산
   useEffect(() => {
     let ticking = false;
 
@@ -138,14 +131,12 @@ const Keyword = () => {
 
     const onScroll = () => {
       if (!ticking) {
-        window.requestAnimationFrame(updateActive);
+        requestAnimationFrame(updateActive);
         ticking = true;
       }
     };
 
-    // 초기 1회
     updateActive();
-
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", updateActive);
 
