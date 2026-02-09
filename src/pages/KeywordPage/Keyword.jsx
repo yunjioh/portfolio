@@ -99,15 +99,17 @@ const Keyword = () => {
         threshold: 0,
         // viewport 중앙 1px 라인을 관측영역으로 만들어 "중앙에 왔을 때"만 true
         rootMargin: "-50% 0px -50% 0px",
-      }
+      },
     );
 
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
-  // ✅ 사진 등장 딜레이 (in-view 진입 시 랜덤하게 주고 싶으면 아래 useMemo를 useEffect로 바꾸면 됨)
-  const randomDelays = useMemo(() => photos.map(() => Math.random() * 0.7), []);
+  const randomDelays = useMemo(
+    () => photos.map(() => Math.random() * 0.7),
+    [photos],
+  );
 
   // ✅ 중앙에 가장 가까운 kw-item을 active로 (전문/부드럽게: rAF)
   useEffect(() => {
