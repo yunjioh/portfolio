@@ -76,7 +76,7 @@ const About = () => {
           <div className="quote-mark">“</div>
           <h3 className="intro-phrase">
             [ I am a <TextFill>De-Coder:</TextFill> ] <br />
-            디자인으로 해석하고 코드로 해독하는 사람
+            디자인으로 해석하고 코드로 해독하는 디자이너
           </h3>
 
           <p className="description">

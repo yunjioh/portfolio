@@ -101,7 +101,7 @@ const Coding = () => {
           </ScrollReveal>
           <ScrollReveal delay={0.4}>
             <SubTitle
-              align="left"
+              align="right"
               description={[
                 {
                   text: "HTML, CSS, JavaScript ",
@@ -109,7 +109,7 @@ const Coding = () => {
                   color: "orange",
                 },
                 {
-                  text: "에 대한 이해를 바탕으로\n 총 6개의 클론 코딩 프로젝트를 제작했습니다.\n실제 웹사이트의 구조와 인터랙션을 분석하며\n반복적인 구현을 통해",
+                  text: "에 대한 이해를 바탕으로 총 6개의 클론 코딩 프로젝트를 제작했습니다.\n실제 웹사이트의 구조와 인터랙션을 분석하며 반복적인 구현을 통해",
                   highlight: false,
                 },
                 {
@@ -125,11 +125,11 @@ const Coding = () => {
 
         <div className="coding-visual" ref={visualRef}>
           <div className="swiper-wrap is-visible">
-            <div className="tech-tabs">
+            {/* <div className="tech-tabs">
               <div className="tech-tab orange">HTML</div>
               <div className="tech-tab neon">CSS</div>
               <div className="tech-tab blue">JAVASCRIPT</div>
-            </div>
+            </div> */}
 
             <div className="swiper-container">
               <div className="swiper-track-centered">

@@ -23,14 +23,16 @@
 
 .intro-phrase {
   font-size: 55px;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 36px;
+  letter-spacing: -2px;
 }
 
 .description {
   color: #9e9e9e;
   line-height: 1.6;
   font-size: 25px;
+  letter-spacing: -1px;
 }
 
 .image-content {

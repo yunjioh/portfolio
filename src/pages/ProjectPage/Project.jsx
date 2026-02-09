@@ -68,23 +68,25 @@ const projectData = [
 ];
 
 const Project = () => {
-  const BASE_TOP = 80;
-  const STACK_GAP = 28;
+  const BASE_TOP = 80; // 모든 카드가 멈출 동일한 상단 위치
+
   return (
     <main className="project-page">
-      <div class="down_arrow">
+      <div className="down_arrow">
         <div>
           <img src="img/arrow.png" alt="down_arrow" />
         </div>
       </div>
+
+      {/* 컨테이너 자체가 sticky 아이템들의 부모 역할을 합니다 */}
       <section className="project-sticky-stack">
         {projectData.map((project, idx) => (
           <div
-            key={project.id}
+            key={idx} // project.id가 없다면 idx 사용
             className="project-sticky-item"
             style={{
-              top: `${BASE_TOP + idx * STACK_GAP}px`,
-              zIndex: 10 + idx,
+              top: `${BASE_TOP}px`, // 모든 카드를 같은 높이로 고정
+              zIndex: 10 + idx /* 나중에 나오는 카드가 위로 올라옴 */,
               "--bg-gradient": project.bgGradient,
             }}
           >

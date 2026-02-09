@@ -8,8 +8,9 @@
   align-items: center;
   flex-shrink: 0;
   padding: 0 129px;
-  border-radius: 50px;
   box-sizing: border-box;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .down_arrow {
@@ -86,6 +87,7 @@ strong {
   display: block;
   margin-bottom: 10px;
   letter-spacing: 0.4px;
+  line-height: 1.7;
 }
 
 .duration-text {
@@ -104,7 +106,8 @@ strong {
 .detail-text {
   margin-top: 10px;
   font-size: 18px;
-  line-height: 1.75;
+  line-height: 1.6;
+  letter-spacing: -1px;
 }
 
 .button-group {

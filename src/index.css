@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Basis Grotesque Arabic Pro", sans-serif;
+  font-family: "Pretendard", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -123,9 +123,9 @@ button:focus {
 }
 
 :root {
-  --blue: #5289FF;
-  --orange: #FF8E1D;
-  --purple: #9F75FF;
+  --blue: #5289ff;
+  --orange: #ff8e1d;
+  --purple: #9f75ff;
 }
 
 .highlight {

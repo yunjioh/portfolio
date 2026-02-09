@@ -20,4 +20,6 @@
   font-size: 23px;
   color: #9e9e9e;
   white-space: pre-wrap;
+  letter-spacing: -1px;
+  line-height: 1.5;
 }
