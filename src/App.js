@@ -11,7 +11,6 @@ import Think from "./pages/ThinkPage/Think";
 import Together from "./pages/TogetherPage/Together";
 import Contact from "./pages/ContactPage/Contact";
 import useRevealOnScroll from "./hooks/useRevealOnScroll";
-import Preview from "./pages/PreviewPage/Preview";
 
 function App() {
   useRevealOnScroll({

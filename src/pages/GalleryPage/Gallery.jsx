@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import "./Gallery.css";
-import Button from "../../components/Button";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -21,17 +20,18 @@ const Gallery = () => {
       gsap.set(bgWrap, { scale: 1, transformOrigin: "50% 50%" });
       gsap.set(scaleWrap, { scale: 1, transformOrigin: "50% 50%" });
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: el,
-          start: "top top",
-          end: "+=130%",
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      })
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: el,
+            start: "top top",
+            end: "+=130%",
+            pin: true,
+            scrub: 1,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        })
         // ✅ 배경 + 이미지 같이 작아짐
         .to(bgWrap, { scale: 0.3, ease: "none" }, 0)
 

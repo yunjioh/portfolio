@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProjectCard from "../../components/ProjectCard";
@@ -77,7 +77,11 @@ const Project = () => {
           <div
             key={project.id}
             className="project-sticky-item"
-            style={{ top: `${BASE_TOP + idx * STACK_GAP}px`, zIndex: 10 + idx,  "--bg-gradient": project.bgGradient, }}
+            style={{
+              top: `${BASE_TOP + idx * STACK_GAP}px`,
+              zIndex: 10 + idx,
+              "--bg-gradient": project.bgGradient,
+            }}
           >
             <ProjectCard project={project} />
           </div>

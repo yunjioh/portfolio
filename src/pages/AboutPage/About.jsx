@@ -1,5 +1,4 @@
 import Title from "../../components/Title";
-import SubTitle from "../../components/SubTitle";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -40,17 +39,29 @@ const About = () => {
       tl.fromTo(
         ".text-content",
         { x: -200, opacity: 0, filter: "blur(6px)" },
-        { x: 0, opacity: 1, filter: "blur(0px)", duration: 0.9, ease: "power3.out" },
+        {
+          x: 0,
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 0.9,
+          ease: "power3.out",
+        },
       ).fromTo(
         ".profile-wrapper",
         { x: 200, opacity: 0, scale: 0.98, filter: "blur(6px)" },
-        { x: 0, opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.9, ease: "power3.out" },
+        {
+          x: 0,
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+          duration: 0.9,
+          ease: "power3.out",
+        },
       );
     }, el);
 
     return () => ctx.revert();
   }, []);
-
 
   return (
     <section className="about" id="about" ref={sectionRef}>
@@ -64,9 +75,7 @@ const About = () => {
         <div className="text-content">
           <div className="quote-mark">“</div>
           <h3 className="intro-phrase">
-            [ I am a{" "}
-            <TextFill >De-Coder:</TextFill>
-            {" "}] <br />
+            [ I am a <TextFill>De-Coder:</TextFill> ] <br />
             디자인으로 해석하고 코드로 해독하는 사람
           </h3>
 
@@ -75,9 +84,10 @@ const About = () => {
             <br />
             <TextFill color="#0066ff">사용자의 니즈를 감각적으로 해석</TextFill>
             하고, 이를{" "}
-            <TextFill color="#0066ff">실제 구현 가능한 솔루션으로 해독</TextFill>
+            <TextFill color="#0066ff">
+              실제 구현 가능한 솔루션으로 해독
+            </TextFill>
             하는 것을 지향합니다.
-
             <br />
             이제 단순히 보기 좋은 화면을 넘어 사용자와 브랜드 모두에게
             <br />
@@ -95,7 +105,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section >
+    </section>
   );
 };
 
