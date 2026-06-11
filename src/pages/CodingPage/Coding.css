@@ -238,6 +238,10 @@
     margin-bottom: 40px;
   }
 
+  .coding-list {
+    gap: 24px;
+  }
+
   .card-text-side {
     padding: 40px 30px;
   }

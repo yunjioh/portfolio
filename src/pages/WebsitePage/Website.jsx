@@ -3,6 +3,7 @@ import "./Website.css"
 import Title from "../../components/Title";
 import SubTitle from "../../components/SubTitle";
 import ScrollReveal from "../../components/ScrollReveal";
+import Badge from "../../components/Badge";
 import { Link } from "react-router-dom";
 
 export const websiteProjects = [
