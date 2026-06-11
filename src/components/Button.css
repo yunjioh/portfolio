@@ -1,9 +1,21 @@
 .main-button {
   border: 1px solid #505050;
-  padding: 15px 23px;
+  padding: 12px 20px;
   border-radius: 50px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -1px;
   cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+  .main-button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-button {
+    font-size: 12px;
+  }
 }
