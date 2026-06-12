@@ -36,13 +36,13 @@ const ProjectCard = ({ project }) => {
   return (
     <section className="project">
       <div className="project-content">
-        <div className="inner">
-          <div className="title-wrapper">
-            <Title
-              subTitle={project.subTitle}
-              mainTitle={project.mainTitle}
-              animate={false}
-            />
+        <div className="title-wrapper">
+          <Title
+            subTitle={project.subTitle}
+            mainTitle={project.mainTitle}
+            animate={false}
+          />
+          <div className="badge-con">
             {project.type && (
               <Badge
                 text={project.type === "team" ? "TEAM PROJECT" : "PERSONAL PROJECT"}
@@ -50,80 +50,77 @@ const ProjectCard = ({ project }) => {
                 rotate={0}
                 position={{ top: "0", right: "0" }}
               />
-            )}
-          </div>
-          <div className="text-area">
-            <div className="project-info">
-              <p className="duration-text">
-                <strong style={{ color: `var(${project.bg})` }}>DURATION</strong> {project.duration}
-              </p>
-              {Array.isArray(project.contribution) &&
-                project.contribution.length > 0 && (
-                  <div className="contrib">
-                    <div className="con">
-                      <strong style={{ color: `var(${project.bg})` }}>Contribution</strong>
-                    </div>
-                    <div className="num">
-                      {project.contribution.map((item, idx) => (
-                        <div className="contrib-row" key={idx}>
-                          <span className="contrib-label">{item.label}</span>
-                          <span className="contrib-value">{item.value}%</span>
-                        </div>
-                      ))}
-                    </div>
+            )}</div>
+        </div>
+        <div className="text-area">
+          <div className="project-info">
+            <p className="duration-text">
+              <strong style={{ color: `var(${project.bg})` }}>DURATION</strong> {project.duration}
+            </p>
+            {Array.isArray(project.contribution) &&
+              project.contribution.length > 0 && (
+                <div className="contrib">
+                  <div className="con">
+                    <strong style={{ color: `var(${project.bg})` }}>Contribution</strong>
                   </div>
-                )}
-              <div className="border-box">
-                <div className="role-text">
-                  <strong style={{ color: `var(${project.bg})` }}>PROJECT ROLE</strong>
-                  <p>{project.role}</p>
-
-                  <p className="detail-text">{project.detail}</p>
-
-                </div>
-
-                <div className="bottom">
-                  <div className="button-group">
-                    <Button text="WEBSITE  →" href={project.site} />
-                    <Button text="PROPOSAL  →" href={project.doc} />
+                  <div className="num">
+                    {project.contribution.map((item, idx) => (
+                      <div className="contrib-row" key={idx}>
+                        <span className="contrib-label">{item.label}</span>
+                        <span className="contrib-value">{item.value}%</span>
+                      </div>
+                    ))}
                   </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 💡 이미지 디스플레이 영역: 1개씩 보여주는 슬라이더 */}
-            <div className="image-display-area">
-              {imgList.length > 0 && (
-                <div className="slider-container">
-                  {/* 전체 이미지 개수가 1개보다 많을 때만 좌우 제어 버튼 노출 */}
-                  {imgList.length > 1 && (
-                    <button className="slide-btn prev" onClick={handlePrev} aria-label="Previous image">
-                      ‹
-                    </button>
-                  )}
-
-                  {/* 💡 단일 이미지 래퍼 */}
-                  <div className="image-pair-wrapper">
-                    <div className="image-wrapper">
-                      <picture>
-                        <img
-                          src={imgList[currentImgIdx]}
-                          alt={`${project.mainTitle} preview ${currentImgIdx + 1}`}
-                        />
-                      </picture>
-                    </div>
-                  </div>
-
-                  {imgList.length > 1 && (
-                    <button className="slide-btn next" onClick={handleNext} aria-label="Next image">
-                      ›
-                    </button>
-                  )}
                 </div>
               )}
+            <div className="role-text">
+              <strong style={{ color: `var(${project.bg})` }}>PROJECT ROLE</strong>
+              <p>{project.role}</p>
+
+              <p className="detail-text">{project.detail}</p>
+
             </div>
 
+            <div className="bottom">
+              <div className="button-group">
+                <Button text="WEBSITE  →" href={project.site} />
+                <Button text="PROPOSAL  →" href={project.doc} />
+              </div>
+            </div>
           </div>
+
+          {/* 💡 이미지 디스플레이 영역: 1개씩 보여주는 슬라이더 */}
+          <div className="image-display-area">
+            {imgList.length > 0 && (
+              <div className="slider-container">
+                {/* 전체 이미지 개수가 1개보다 많을 때만 좌우 제어 버튼 노출 */}
+                {imgList.length > 1 && (
+                  <button className="slide-btn prev" onClick={handlePrev} aria-label="Previous image">
+                    ‹
+                  </button>
+                )}
+
+                {/* 💡 단일 이미지 래퍼 */}
+                <div className="image-pair-wrapper">
+                  <div className="image-wrapper">
+                    <picture>
+                      <img
+                        src={imgList[currentImgIdx]}
+                        alt={`${project.mainTitle} preview ${currentImgIdx + 1}`}
+                      />
+                    </picture>
+                  </div>
+                </div>
+
+                {imgList.length > 1 && (
+                  <button className="slide-btn next" onClick={handleNext} aria-label="Next image">
+                    ›
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+
         </div>
       </div>
     </section>
