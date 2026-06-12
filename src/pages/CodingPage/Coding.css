@@ -68,9 +68,9 @@
 }
 
 .card-sub {
-  font-size: 13px;
-  font-weight: 600;
-  color: #b0b0b0;
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
   letter-spacing: 0.08em;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -90,7 +90,7 @@
 
 .card-text {
   color: #505050;
-  font-weight: normal;
+  font-weight: 200;
   white-space: pre-line;
   line-height: 1.6;
 }
@@ -247,8 +247,7 @@
   }
 
   .card-img-side {
-    padding: 30px;
-    height: 320px;
+    padding: 0 30px 30px;
   }
 
   .card-title {
@@ -277,6 +276,10 @@
 
   .card-title {
     font-size: 22px;
+  }
+
+  .card-text {
+    font-size: 14px;
   }
 
   .card-img-side {

@@ -416,7 +416,7 @@
   }
 
   .header {
-    padding: 24px 4vw;
+    padding: 2vh 4vw;
   }
 
   .full-video {
@@ -425,10 +425,6 @@
 }
 
 @media (max-width: 480px) {
-  .header {
-    padding: 20px 14px;
-  }
-
   .hero-name {
     font-size: 18px;
   }

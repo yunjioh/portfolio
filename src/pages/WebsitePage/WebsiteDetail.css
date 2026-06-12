@@ -49,7 +49,7 @@
 }
 
 .project-title {
-  font-size: clamp(30px, 4vw, 48px);
+  font-size: clamp(24px, 4vw, 48px);
   font-weight: 700;
   line-height: 1.3;
   padding: 24px 0 60px;
@@ -235,7 +235,11 @@
     margin: auto;
     line-height: 1.5;
     margin-bottom: 24px;
-    font-size: 20px;
+    font-size: 16px;
+  }
+
+  .concept-txt {
+    font-size: 14px;
   }
 
   .project-txt,
@@ -243,7 +247,33 @@
     flex: 1 1 100%;
   }
 
+  .project-title {
+    padding-bottom: 40px;
+  }
+
+  .detail-header {
+    margin-bottom: 60px;
+  }
+
   .page-title {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .detail-page {
+    margin-top: 80px;
+  }
+
+  .detail-header {
+    margin-bottom: 40px;
+  }
+
+  .project-title {
+    margin-bottom: 32px;
+  }
+
+  .detail-nav {
+    margin-bottom: 32px;
   }
 }
