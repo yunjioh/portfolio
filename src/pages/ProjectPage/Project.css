@@ -47,7 +47,7 @@
 
 .project {
   height: 100%;
-  padding: 0 4vw;
+  padding: 4vh 4vw;
 }
 
 .title-wrapper {
@@ -99,22 +99,26 @@
 
 .text-area {
   display: flex;
+  height: 100%;
   gap: 4vw;
   justify-content: space-between;
 }
 
 .project-content {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  gap: 56px;
-  padding: 12vh 0;
+  gap: 4vh;
 }
 
 .project-info {
   text-align: start;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 strong {
@@ -128,7 +132,6 @@ strong {
 .duration-text {
   font-size: 20px;
   font-weight: 200;
-  margin-bottom: 40px;
   color: #505050;
   opacity: 0.85;
 }
@@ -149,7 +152,6 @@ strong {
 }
 
 .button-group {
-  margin-top: 40px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
@@ -226,7 +228,6 @@ strong {
 .contrib {
   text-align: start;
   gap: 22px;
-  margin-bottom: 40px;
   flex-wrap: wrap;
 }
 
@@ -272,7 +273,7 @@ strong {
 }
 
 .project .title-container {
-  margin-bottom: 120px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 1400px) {
@@ -280,12 +281,16 @@ strong {
     width: 100%;
   }
 
-  .project {
-    padding: 0 4vw;
+  .project-content {
+    gap: 10vh;
   }
 
   .text-area {
-    gap: 10vw;
+    gap: 6vw;
+  }
+
+  .project-info {
+    height: 60vh;
   }
 
   .text-area,
@@ -324,15 +329,18 @@ strong {
     font-size: 80px;
   }
 
+  .project-info {
+    height: 68vh;
+  }
 }
 
 @media (max-width: 768px) {
-  .project {
-    padding: 0;
-  }
-
   .inner {
     gap: 8vh;
+  }
+
+  .project {
+    padding: 6vh 4vw;
   }
 
   .image-display-area {
@@ -389,14 +397,6 @@ strong {
     font-size: 15px;
   }
 
-  .project .title-container {
-    margin-bottom: 80px;
-  }
-
-  .duration-text {
-    margin-bottom: 24px;
-  }
-
   .project-inner {
     display: flex;
     flex-direction: column;
@@ -408,6 +408,10 @@ strong {
     width: 100%;
     height: auto;
     min-height: unset;
+  }
+
+  .project-info {
+    height: 60vh;
   }
 
   strong {
@@ -435,6 +439,10 @@ strong {
   }
 
   .contrib-value {
+    font-size: 16px;
+  }
+
+  .duration-text {
     font-size: 16px;
   }
 
@@ -481,5 +489,9 @@ strong {
 @media (max-width: 490px) {
   .project-spacer {
     height: 72vh;
+  }
+
+  .badge-con {
+    position: relative;
   }
 }

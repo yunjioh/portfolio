@@ -196,7 +196,7 @@
 @media (max-width: 955px) {
   .hobbyTit {
     font-size: 80px;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 
   .hobby-item {
@@ -224,7 +224,7 @@
 @media (max-width: 768px) {
   .hobbyTit {
     font-size: 70px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
   }
 
   .hobby-list {
