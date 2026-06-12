@@ -109,11 +109,6 @@
   max-width: 78%;
 }
 
-@media (max-width: 1600px) {
-  .think-container {
-    height: min(52vh, 760px);
-  }
-}
 
 @media (max-width: 1400px) {
   .think-q-text {
