@@ -19,3 +19,9 @@
     font-size: 12px;
   }
 }
+
+@media (max-width: 500px) {
+  .main-button {
+    padding: 10px 14px;
+  }
+}
